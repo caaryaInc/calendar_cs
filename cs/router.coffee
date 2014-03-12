@@ -1,5 +1,4 @@
 App = Ember.Application.create()
-
 App.Router.map -> 
  @resource 'calendar', path: 'calendar/:year/:month/:day', ->
   @route 'show'

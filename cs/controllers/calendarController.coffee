@@ -1,13 +1,13 @@
 App.CalendarController = Ember.ObjectController.extend
   year: (-> 
     @get('model').getFullYear()
-  ).property('model')
+  ).property 'model' 
   month: (->
     @get('model').getMonth()+1
-  ).property('model')
+  ).property 'model' 
   day: (->
     @get('model').getDate()
-  ).property('model')
+  ).property 'model' 
   formattedDate: (->
     formattedDate = @get('month')+1+"/"+@get('day')+"/"+@get('year') 
   ).property 'year','month','day'
@@ -16,8 +16,7 @@ App.CalendarController = Ember.ObjectController.extend
     month = @get('month')+1
     year =  @get 'year'
     noofdays = new Date(year,month,0).getDate();
-    days.push(new Date(year, month-1,i))  for i in [1..noofdays]
-    console.log(days);  
+    days.push(new Date year, month-1,i)  for i in [1..noofdays]
     return days
   ).property 'year','month'  
   datesofPrevMonth : (->
@@ -25,7 +24,7 @@ App.CalendarController = Ember.ObjectController.extend
     currMonth = @get 'month'
     currYear  = @get 'year'
     firstday = new Date(currYear,currMonth,1).getDay();
-    prevDates.push(new Date(currYear,currMonth,1-i)) for i in [firstday..0]
+    prevDates.push(new Date currYear,currMonth,1-i) for i in [firstday..0]
     return prevDates;
   ).property 'year','month'
   datesofNextMonth : (->
