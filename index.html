@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test Calendar</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/calendar.css">
+</head>
+<body>
+  <script type="text/x-handlebars" data-template-name="application">
+	  <section id="testcalendar" class="pagination-centered">
+      <header id="header">
+        <h3>Ember and Bootstrap test calendar</h3>
+      </header>
+     	{{outlet}}
+	    <footer id="footer">
+		    <p class="text-right">Created by Nikhil Gumma</p>
+	    </footer>
+    </section>
+  </script> 
+ 
+  <script type="text/x-handlebars" data-template-name = "calendar">
+  	<header id="innerheader" class="row text-center" style="margin-top: 30px;">
+      <div class="col-md-9">
+        <button type="button" class="btn btn-primary" {{action "today"}}>Today</button>
+        <div class="btn-group" style="margin-left:20px;">
+          <button type="button" class="btn btn-primary" {{action "prevYear"}} >Prev</button>
+          <button type="button" class="btn">
+            <span> {{year}} </span> 
+          </button>
+          <button type="button" class="btn btn-primary" {{action "nextYear"}}>Next</button>
+        </div>
+        <div class="btn-group" style="margin-left:20px;">
+          <button type="button" class="btn btn-primary" {{action "prevMonth"}}> Prev </button>
+          <button type="button" class="btn">
+            <span>{{month}}</span>
+          </button>
+          <button type="button" class="btn btn-primary" {{action "nextMonth"}}>Next</button>
+        </div>
+      </div>
+      <div class="col-md-3"> {{formattedDate}} <h5> </h5> </div>
+    </header>
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name = 'calendar/show'>
+  </script>
+
+
+<!-- Imports --> 
+
+  <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="//builds.emberjs.com/handlebars-1.0.0.js"></script>
+  <script src="cs/libs/ember-1.4.0.js"></script>
+  <script src="//builds.emberjs.com/tags/v1.0.0-beta.3/ember-data.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="cs/libs/coffee-script.js"></script>
+
+  <script type="text/coffeescript" src="cs/app.coffee"></script>
+  <script type="text/coffeescript" src="cs/router.coffee"></script>
+  <script type="text/coffeescript" src="cs/routes/calendarRoute.coffee"></script>
+  <script type="text/coffeescript" src="cs/controllers/calendarController.coffee"></script>
+
+</body>
+</html>

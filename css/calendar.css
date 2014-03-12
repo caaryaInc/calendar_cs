@@ -1,0 +1,19 @@
+#testcalendar{
+	width: 60%;
+	margin: 5% auto !important;
+}
+
+.is-other-month{
+	color: #CCC;
+}
+
+.is-selected-date{
+	background: #ffc966;
+}
+
+.is-current-date{
+	color: red;
+}
+
+
+
