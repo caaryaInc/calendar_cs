@@ -46,6 +46,32 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name = 'calendar/show'>
+    <section id = "datetable" style="margin-top: 25px;">
+      <table class="table table-bordered text-center">  
+        <thead>  
+          <tr class="text-center">  
+          <th>Sun</th>  
+          <th>Mon</th>  
+          <th>Tue</th>  
+          <th>Wed</th>  
+          <th>Thu</th>  
+          <th>Fri</th>  
+          <th>Sat</th>  
+          </tr>  
+        </thead>  
+        <tbody>  
+          {{#each controllers.calendar.datesinCalendarWeek}}
+          <tr> 
+            {{#each this}}
+              <td>
+                  {{this}}
+              </td> 
+            {{/each}}
+          </tr>
+          {{/each}}
+        </tbody>  
+      </table>
+    </section>
   </script>
 
 
@@ -62,6 +88,7 @@
   <script type="text/coffeescript" src="cs/router.coffee"></script>
   <script type="text/coffeescript" src="cs/routes/calendarRoute.coffee"></script>
   <script type="text/coffeescript" src="cs/controllers/calendarController.coffee"></script>
+  <script type="text/coffeescript" src="cs/controllers/calendarShowController.coffee"></script>
 
 </body>
 </html>

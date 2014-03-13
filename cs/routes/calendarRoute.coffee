@@ -10,19 +10,19 @@ App.CalendarRoute = Ember.Route.extend
     prevYear:->
       date = @controller.get 'model' 
       newDate = new Date date.getFullYear()-1, date.getMonth(), date.getDate()
-      @transitionTo "calendar", newDate
+      @transitionTo "calendar.show", newDate
     nextYear:->
       date = @controller.get 'model'
       newDate = new Date date.getFullYear()+1, date.getMonth(), date.getDate()
-      @transitionTo "calendar", newDate
+      @transitionTo "calendar.show", newDate
     prevMonth:->
       date = @controller.get 'model'
       newDate = new Date date.getFullYear(), date.getMonth()-1, date.getDate()
-      @transitionTo "calendar", newDate
+      @transitionTo "calendar.show", newDate
     nextMonth:->
       date = @controller.get 'model'
       newDate = new Date date.getFullYear()-1, date.getMonth()+1, date.getDate()
-      @transitionTo "calendar", newDate  
+      @transitionTo "calendar.show", newDate  
     today: ->
       newDate = new Date()
-      @transitionTo "calendar", newDate
+      @transitionTo "calendar.show", newDate
